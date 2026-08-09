@@ -1,0 +1,210 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(19, 32, 58, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modalHeader {
+  padding: 20px 24px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.operatorName {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1A2B4C;
+}
+
+.busType {
+  font-size: 13px;
+  color: #5E6B84;
+  font-weight: 600;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #94A3B8;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.closeBtn:hover {
+  color: #1A2B4C;
+}
+
+.modalBody {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #5E6B84;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #F1F5F9;
+  padding-bottom: 4px;
+}
+
+.fareGrid, .policyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  background: #F8FAFC;
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.fareItem, .policyItem {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+}
+
+.fareItem span, .policyItem span {
+  color: #64748B;
+}
+
+.fareItemTotal {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #00bdd1;
+}
+
+.amenitiesGrid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.amenityChip {
+  background-color: #E0F2FE;
+  color: #0369A1;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.pointsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pointCard {
+  background: #F8FAFC;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+}
+
+.pointHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.pointTime {
+  font-weight: 800;
+  color: #1A2B4C;
+  font-size: 14px;
+}
+
+.nearestTag {
+  background-color: #DCFCE7;
+  color: #15803D;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.pointName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.pointContact {
+  font-size: 12px;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.emptyText {
+  font-size: 13px;
+  color: #94A3B8;
+  font-style: italic;
+}
+
+.modalFooter {
+  padding: 16px 24px;
+  background: #F8FAFC;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeModalBtn {
+  background-color: #E2E8F0;
+  color: #1A2B4C;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.closeModalBtn:hover {
+  background-color: #CBD5E1;
+}

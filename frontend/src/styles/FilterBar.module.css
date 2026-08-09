@@ -1,0 +1,59 @@
+.filterCard {
+  background: #ffffff;
+  padding: 16px 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(26, 43, 76, 0.06);
+  margin-bottom: 20px;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.resultsCount {
+  font-size: 15px;
+  color: #1A2B4C;
+}
+
+.resultsCount strong {
+  color: #00bdd1;
+  font-size: 18px;
+}
+
+.filtersGroup {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filterControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterControl label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5E6B84;
+}
+
+.filterControl select {
+  padding: 8px 12px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A2B4C;
+  background-color: #F8FAFC;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterControl select:focus {
+  border-color: #00bdd1;
+  background-color: #FFFFFF;
+}

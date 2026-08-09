@@ -1,0 +1,192 @@
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px 26px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 16px rgba(26, 43, 76, 0.06);
+  border: 1px solid #E2E8F0;
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(26, 43, 76, 0.12);
+  border-color: #CBD5E1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.operatorName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1A2B4C;
+  margin-bottom: 4px;
+}
+
+.busMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badgeAc {
+  background-color: #E0F2FE;
+  color: #0369A1;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.badgeNonAc {
+  background-color: #FEF3C7;
+  color: #B45309;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.busTypeName {
+  font-size: 13px;
+  color: #5E6B84;
+  font-weight: 600;
+}
+
+.priceContainer {
+  text-align: right;
+}
+
+.currency {
+  font-size: 20px;
+  font-weight: 800;
+  color: #00bdd1;
+}
+
+.totalFare {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1A2B4C;
+}
+
+.seatsInfo {
+  font-size: 12px;
+  font-weight: 600;
+  color: #EF4444;
+}
+
+.scheduleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 1px solid #F1F5F9;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.timeBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.time {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1A2B4C;
+}
+
+.cityName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5E6B84;
+}
+
+.dateSub {
+  font-size: 11px;
+  color: #94A3B8;
+}
+
+.durationLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+}
+
+.durationText {
+  font-size: 13px;
+  font-weight: 700;
+  color: #00bdd1;
+  margin-bottom: 4px;
+}
+
+.lineGraphic {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.startDot, .endDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #1A2B4C;
+}
+
+.dashLine {
+  flex: 1;
+  height: 2px;
+  background-color: #CBD5E1;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.amenitiesList {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.amenityTag {
+  background-color: #F1F5F9;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.amenityMore {
+  font-size: 12px;
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+.detailsBtn {
+  background-color: #1A2B4C;
+  color: #FFFFFF;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.detailsBtn:hover {
+  background-color: #00bdd1;
+}

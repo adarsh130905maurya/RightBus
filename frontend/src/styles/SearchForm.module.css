@@ -1,0 +1,128 @@
+.searchCard {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(26, 43, 76, 0.08);
+  margin-bottom: 24px;
+  border: 1px solid #E2E8F0;
+}
+
+.form {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.fieldGroup label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #5E6B84;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dotRed {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #EF4444;
+  position: absolute;
+  left: 14px;
+}
+
+.dotNavy {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #1A2B4C;
+  position: absolute;
+  left: 14px;
+}
+
+.fieldGroup input {
+  width: 100%;
+  padding: 12px 14px 12px 34px;
+  border: 2px solid #E2E8F0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1A2B4C;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.fieldGroup input[type="date"] {
+  padding-left: 14px;
+}
+
+.fieldGroup input:focus {
+  border-color: #00bdd1;
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15);
+}
+
+.swapBtn {
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  color: #1A2B4C;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+  transition: all 0.2s ease;
+}
+
+.swapBtn:hover {
+  background: #E2E8F0;
+  transform: rotate(180deg);
+}
+
+.searchBtn {
+  background: linear-gradient(135deg, #00E5FF 0%, #1A2B4C 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.25);
+  min-width: 150px;
+}
+
+.searchBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+}
+
+.validationError {
+  margin-top: 16px;
+  padding: 10px 14px;
+  background-color: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: 8px;
+  color: #991B1B;
+  font-size: 14px;
+  font-weight: 600;
+}
