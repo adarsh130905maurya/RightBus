@@ -81,13 +81,12 @@ The assignment dataset intentionally contains inconsistent `route_name` fields. 
 - **Optional Filters:** Support for `filter_ac` (`ac` / `non-ac`) and `filter_type` (`sleeper` / `seater`).
 - **Sorting:** Support for `sort_by` (`price` low-to-high and `departure` earliest first).
 
-### 3. Frontend UI States Implemented
-- **Initial State:** Search form ready with default inputs.
-- **Loading State:** Animated spinner and status message during fetch.
-- **Success Results:** List of formatted bus cards with badges, pricing, and amenities.
-- **Empty State (No Results):** Friendly notification when no trips match the search criteria.
-- **Error State:** Error container with retry capability if backend API is unreachable.
-- **Bus Details Modal:** Expandable view showing Boarding Points, Dropping Points, Cancellation Policy, and Pricing Breakdown.
+### 3. Frontend Features & UI States Implemented
+- **5 Complete UI States:** Initial, Loading (`"Finding the right choices for you..."`), Success, Empty/No-results, and API Error (with retry button).
+- **Official Brand Design:** Customized with official RightBus logo, color palette (`#1A2B4C` navy & `#00E5FF` cyan), and glassmorphism header.
+- **Popular Route Quick-Select Pills:** Instant one-click search for routes like `Bangalore → Mumbai`, `Bangalore → Pune`, `Mumbai → Goa`, `Bangalore → Hyderabad`.
+- **City Autocomplete:** Native datalist suggestions for source and destination city inputs.
+- **Bus Details Modal:** Interactive modal displaying Boarding Points, Dropping Points, Cancellation Policy, Pricing Breakdown, and a **Visual Interactive Seat Map Preview Grid**.
 
 ---
 
@@ -127,6 +126,8 @@ RightBus/
 │       └── test_search.py  # 8 Pytest backend test cases
 ├── frontend/
 │   ├── package.json
+│   ├── public/
+│   │   └── logo.png        # Official RightBus brand logo
 │   ├── src/
 │   │   ├── pages/          # Next.js pages (_app.js, index.js)
 │   │   ├── components/     # SearchForm, FilterBar, BusCard, BusDetails
