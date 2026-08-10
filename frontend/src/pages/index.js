@@ -91,7 +91,7 @@ export default function Home() {
             <span className={styles.logoBadge}>RB</span>
             <span className={styles.logoText}>RightBus</span>
           </div>
-          <span className={styles.navTagline}>Full-Stack Bus Search</span>
+          <span className={styles.navTagline}>Smart Intercity Booking</span>
         </header>
 
         {/* Hero & Search Banner */}
@@ -124,8 +124,8 @@ export default function Home() {
           {uiState === 'loading' && (
             <div className={styles.stateContainer}>
               <div className={styles.spinner}></div>
-              <h3>Searching buses...</h3>
-              <p>Fetching real-time schedules and seat availability from GDS.</p>
+              <h3>Finding the right choices for you...</h3>
+              <p>Searching live bus routes, seat availability, and best prices for your trip.</p>
             </div>
           )}
 
@@ -134,7 +134,11 @@ export default function Home() {
             <div className={`${styles.stateContainer} ${styles.errorContainer}`}>
               <div className={styles.stateIcon}>⚠️</div>
               <h3>Unable to load bus results</h3>
-              <p className={styles.errorText}>{errorMessage}</p>
+              <p className={styles.errorText}>
+                {errorMessage.includes('Failed to connect')
+                  ? 'Unable to connect to search service. Please make sure the backend is running and try again.'
+                  : errorMessage}
+              </p>
               <button
                 className={styles.retryBtn}
                 onClick={() => fetchBuses(searchParams.source, searchParams.destination, searchParams.journeyDate)}
