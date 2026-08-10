@@ -77,6 +77,13 @@ export default function Home() {
     }
   };
 
+  const handleScrollToSearch = () => {
+    const el = document.getElementById('search-form-card');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <Head>
@@ -100,11 +107,11 @@ export default function Home() {
           </div>
           <div className={styles.navRight}>
             <div className={styles.navLinks}>
-              <span className={styles.navLink}>Features</span>
-              <span className={styles.navLink}>About</span>
-              <span className={styles.navLink}>Contact</span>
+              <span className={styles.navLink} onClick={handleScrollToSearch}>Features</span>
+              <span className={styles.navLink} onClick={handleScrollToSearch}>About</span>
+              <span className={styles.navLink} onClick={handleScrollToSearch}>Contact</span>
             </div>
-            <button className={styles.joinBtn}>Search Routes</button>
+            <button className={styles.joinBtn} onClick={handleScrollToSearch}>Search Routes</button>
           </div>
         </nav>
 

@@ -9,11 +9,21 @@ export default function BusDetails({ bus, onClose }) {
     is_ac,
     pricing = {},
     schedule = {},
+    availability = {},
     boarding_points = [],
     dropping_points = [],
     cancellation_policy = {},
     amenities = []
   } = bus;
+
+  // Generate a mock seat map layout for demonstration
+  const totalSeats = 20;
+  const availableCount = availability.seats_available || 12;
+  const mockSeats = Array.from({ length: totalSeats }, (_, i) => ({
+    id: i + 1,
+    number: `Seat ${i + 1}`,
+    isBooked: i >= availableCount
+  }));
 
   return (
     <div className={styles.overlay} onClick={onClose}>
@@ -27,6 +37,26 @@ export default function BusDetails({ bus, onClose }) {
         </div>
 
         <div className={styles.modalBody}>
+          {/* Seat Layout Preview */}
+          <div className={styles.section}>
+            <h4 className={styles.sectionTitle}>Seat Map Preview ({availableCount} Available)</h4>
+            <div className={styles.seatLegend}>
+              <span className={styles.legendItem}><span className={styles.seatAvailable}></span> Available</span>
+              <span className={styles.legendItem}><span className={styles.seatBooked}></span> Booked</span>
+            </div>
+            <div className={styles.seatGrid}>
+              {mockSeats.map((s) => (
+                <div
+                  key={s.id}
+                  className={`${styles.seatBox} ${s.isBooked ? styles.seatBoxBooked : styles.seatBoxAvailable}`}
+                  title={s.isBooked ? `${s.number} (Booked)` : `${s.number} (Available)`}
+                >
+                  {s.id}
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Fare Summary */}
           <div className={styles.section}>
             <h4 className={styles.sectionTitle}>Pricing Summary</h4>

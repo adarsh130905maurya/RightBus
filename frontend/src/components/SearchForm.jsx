@@ -1,16 +1,23 @@
 import { useState } from 'react';
 import styles from '@/styles/SearchForm.module.css';
 
+const POPULAR_ROUTES = [
+  { from: 'Bangalore', to: 'Mumbai', label: 'Bangalore → Mumbai' },
+  { from: 'Bangalore', to: 'Pune', label: 'Bangalore → Pune' },
+  { from: 'Mumbai', to: 'Goa', label: 'Mumbai → Goa' },
+  { from: 'Bangalore', to: 'Hyderabad', label: 'Bangalore → Hyderabad' }
+];
+
+const CITIES = ['Bangalore', 'Mumbai', 'Pune', 'Hyderabad', 'Chennai', 'Goa', 'Delhi'];
+
 export default function SearchForm({ onSearch, initialValues }) {
-  const todayStr = new Date().toISOString().split('T')[0];
-  
   const [source, setSource] = useState(initialValues?.source || 'Bangalore');
   const [destination, setDestination] = useState(initialValues?.destination || 'Mumbai');
   const [journeyDate, setJourneyDate] = useState(initialValues?.journeyDate || '2026-08-09');
   const [validationError, setValidationError] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    if (e) e.preventDefault();
     setValidationError('');
 
     const srcClean = source.trim();
@@ -42,8 +49,20 @@ export default function SearchForm({ onSearch, initialValues }) {
     setDestination(temp);
   };
 
+  const handleSelectRoute = (from, to) => {
+    setSource(from);
+    setDestination(to);
+    onSearch(from, to, journeyDate);
+  };
+
   return (
-    <div className={styles.searchCard}>
+    <div className={styles.searchCard} id="search-form-card">
+      <datalist id="city-list">
+        {CITIES.map((c) => (
+          <option key={c} value={c} />
+        ))}
+      </datalist>
+
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.fieldGroup}>
           <label htmlFor="source-input">From City</label>
@@ -52,6 +71,7 @@ export default function SearchForm({ onSearch, initialValues }) {
             <input
               id="source-input"
               type="text"
+              list="city-list"
               placeholder="e.g. Bangalore"
               value={source}
               onChange={(e) => setSource(e.target.value)}
@@ -71,6 +91,7 @@ export default function SearchForm({ onSearch, initialValues }) {
             <input
               id="destination-input"
               type="text"
+              list="city-list"
               placeholder="e.g. Mumbai"
               value={destination}
               onChange={(e) => setDestination(e.target.value)}
@@ -94,6 +115,23 @@ export default function SearchForm({ onSearch, initialValues }) {
           Search Buses
         </button>
       </form>
+
+      {/* Popular Routes Quick Select */}
+      <div className={styles.quickRoutes}>
+        <span className={styles.quickTitle}>Popular Routes:</span>
+        <div className={styles.pillsContainer}>
+          {POPULAR_ROUTES.map((route, i) => (
+            <button
+              key={i}
+              type="button"
+              className={styles.routePill}
+              onClick={() => handleSelectRoute(route.from, route.to)}
+            >
+              {route.label}
+            </button>
+          ))}
+        </div>
+      </div>
 
       {validationError && (
         <div className={styles.validationError}>
