@@ -37,7 +37,7 @@ A production-ready full-stack bus search module built for **RightBus Technologie
 ```bash
 cd mock-gds
 pip install -r requirements.txt
-uvicorn main:app --port 8001 --reload
+python -m uvicorn main:app --port 8001 --reload
 ```
 *Health Check:* `http://localhost:8001/health`  
 *GDS Search:* `http://localhost:8001/mock-gds/search?source=Bangalore&destination=Mumbai&journey_date=2026-08-09`
@@ -48,7 +48,7 @@ uvicorn main:app --port 8001 --reload
 ```bash
 cd backend
 pip install -r requirements.txt
-uvicorn main:app --port 8000 --reload
+python -m uvicorn main:app --port 8000 --reload
 ```
 *Health Check:* `http://localhost:8000/health`  
 *Backend Search:* `http://localhost:8000/api/buses/search?source=Bangalore&destination=Mumbai&journey_date=2026-08-09`
