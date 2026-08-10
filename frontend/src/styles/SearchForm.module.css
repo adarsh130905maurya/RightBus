@@ -1,16 +1,16 @@
 .searchCard {
-  background: #ffffff;
-  padding: 24px;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(26, 43, 76, 0.08);
+  background: var(--surface);
+  padding: 28px;
+  border-radius: 22px;
+  box-shadow: var(--shadow-md);
   margin-bottom: 24px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border);
 }
 
 .form {
   display: flex;
   align-items: flex-end;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
@@ -24,10 +24,10 @@
 
 .fieldGroup label {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #5E6B84;
+  color: var(--text-muted);
 }
 
 .inputWrapper {
@@ -43,27 +43,30 @@
   background-color: #EF4444;
   position: absolute;
   left: 14px;
+  z-index: 2;
 }
 
 .dotNavy {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #1A2B4C;
+  background-color: var(--primary);
   position: absolute;
   left: 14px;
+  z-index: 2;
 }
 
 .fieldGroup input {
   width: 100%;
-  padding: 12px 14px 12px 34px;
-  border: 2px solid #E2E8F0;
-  border-radius: 10px;
+  padding: 13px 14px 13px 36px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
   font-size: 15px;
-  font-weight: 600;
-  color: #1A2B4C;
+  font-weight: 700;
+  color: var(--primary);
   outline: none;
-  transition: all 0.2s ease;
+  background-color: var(--surface-soft);
+  transition: all 0.25s ease;
 }
 
 .fieldGroup input[type="date"] {
@@ -71,58 +74,59 @@
 }
 
 .fieldGroup input:focus {
-  border-color: #00bdd1;
-  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15);
+  border-color: var(--accent-dark);
+  background-color: var(--surface);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.2);
 }
 
 .swapBtn {
-  background: #F1F5F9;
-  border: 1px solid #CBD5E1;
-  color: #1A2B4C;
-  width: 40px;
-  height: 40px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 2px;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .swapBtn:hover {
-  background: #E2E8F0;
+  background: var(--border);
   transform: rotate(180deg);
 }
 
 .searchBtn {
-  background: linear-gradient(135deg, #00E5FF 0%, #1A2B4C 100%);
+  background: var(--gradient-brand);
   color: #FFFFFF;
   border: none;
-  padding: 13px 28px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 800;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.25);
-  min-width: 150px;
+  box-shadow: var(--shadow-accent);
+  min-width: 160px;
 }
 
 .searchBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 229, 255, 0.4);
 }
 
 .validationError {
   margin-top: 16px;
-  padding: 10px 14px;
+  padding: 10px 16px;
   background-color: #FEF2F2;
   border: 1px solid #FCA5A5;
-  border-radius: 8px;
+  border-radius: 10px;
   color: #991B1B;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }

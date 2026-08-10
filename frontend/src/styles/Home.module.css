@@ -1,86 +1,159 @@
-.pageContainer {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px 40px;
+.pageWrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--surface);
 }
 
+/* ─── Navigation Bar ─── */
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  padding: 14px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #E2E8F0;
-  margin-bottom: 24px;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
 }
 
-.navBrand {
+.logoContainer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  cursor: pointer;
 }
 
-.logoBadge {
-  background: linear-gradient(135deg, #00E5FF 0%, #1A2B4C 100%);
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 16px;
-  padding: 6px 10px;
-  border-radius: 8px;
+.logoImg {
+  object-fit: contain;
 }
 
-.logoText {
-  font-size: 22px;
-  font-weight: 800;
-  color: #1A2B4C;
-  letter-spacing: -0.5px;
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
-.navTagline {
-  font-size: 13px;
+.navLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.navLink {
+  font-size: 15px;
   font-weight: 600;
-  color: #5E6B84;
+  color: var(--text);
+  cursor: pointer;
+  transition: color 0.25s ease;
 }
 
+.navLink:hover {
+  color: var(--accent-dark);
+}
+
+.joinBtn {
+  background: var(--gradient-brand);
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-accent);
+  transition: all 0.25s ease;
+}
+
+.joinBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+}
+
+/* ─── Hero Section ─── */
 .heroSection {
+  margin-top: 78px;
+  padding: 60px 20px 40px;
   text-align: center;
-  margin-bottom: 32px;
+  position: relative;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.bgDecoration1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.bgDecoration2 {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(26, 43, 76, 0.06) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto 36px;
+  position: relative;
+  z-index: 2;
 }
 
 .heroTitle {
-  font-size: 32px;
-  font-weight: 900;
-  color: #1A2B4C;
-  letter-spacing: -1px;
-  margin-bottom: 8px;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  color: var(--primary);
+  margin-bottom: 14px;
 }
 
 .heroGradient {
-  background: linear-gradient(135deg, #00E5FF 0%, #1A2B4C 100%);
+  background: var(--gradient-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .heroSubtitle {
-  font-size: 15px;
-  color: #5E6B84;
-  margin-bottom: 24px;
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 auto;
 }
 
+.searchCardWrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+/* ─── Main Content & States ─── */
 .mainContent {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  width: 100%;
   flex: 1;
 }
 
-.stateContainer {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 48px 24px;
+.stateCard {
+  background: var(--surface);
+  border-radius: 22px;
+  padding: 50px 30px;
   text-align: center;
-  box-shadow: 0 4px 16px rgba(26, 43, 76, 0.04);
-  border: 1px solid #E2E8F0;
-
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
 }
 
 .stateIcon {
@@ -88,31 +161,31 @@
   margin-bottom: 12px;
 }
 
-.stateContainer h3 {
-  font-size: 20px;
+.stateCard h3 {
+  font-size: 22px;
   font-weight: 800;
-  color: #1A2B4C;
-  margin-bottom: 6px;
+  color: var(--primary);
+  margin-bottom: 8px;
 }
 
-.stateContainer p {
-  font-size: 14px;
-  color: #5E6B84;
-  max-width: 480px;
+.stateCard p {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 500px;
   margin: 0 auto;
 }
 
 .tipText {
   font-size: 13px;
-  color: #94A3B8;
+  color: var(--text-faint);
   margin-top: 8px;
 }
 
 .spinner {
-  width: 44px;
-  height: 44px;
-  border: 4px solid #E2E8F0;
-  border-top-color: #00bdd1;
+  width: 46px;
+  height: 46px;
+  border: 4px solid #EAF0F6;
+  border-top-color: var(--accent-dark);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
   margin: 0 auto 16px;
@@ -122,7 +195,7 @@
   to { transform: rotate(360deg); }
 }
 
-.errorContainer {
+.errorCard {
   background: #FEF2F2;
   border-color: #FCA5A5;
 }
@@ -138,25 +211,64 @@
   color: #ffffff;
   border: none;
   padding: 10px 24px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
 }
 
-.retryBtn:hover {
-  background-color: #B91C1C;
-}
-
-.resultsList {
+.resultsGrid {
   display: flex;
   flex-direction: column;
 }
 
+/* ─── Footer ─── */
 .footer {
+  background: var(--primary);
+  color: white;
+  padding: 50px 60px 30px;
   text-align: center;
-  padding: 24px 0 0;
+  margin-top: auto;
+}
+
+.footerBrand h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footerBrand p {
+  font-size: 14px;
+  color: #A0AEC0;
+  max-width: 500px;
+  margin: 0 auto 24px;
+}
+
+.footerBottom {
   font-size: 13px;
-  color: #94A3B8;
-  margin-top: 40px;
-  border-top: 1px solid #E2E8F0;
+  color: #718096;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.footerBottom span {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 20px;
+  }
+  .navLinks {
+    display: none;
+  }
+  .heroTitle {
+    font-size: 32px;
+  }
+  .heroSubtitle {
+    font-size: 15px;
+  }
 }

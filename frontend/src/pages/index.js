@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import SearchForm from '@/components/SearchForm';
 import FilterBar from '@/components/FilterBar';
 import BusCard from '@/components/BusCard';
@@ -79,50 +80,71 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>RightBus — Intercity Bus Search</title>
-        <meta name="description" content="Search & book intercity bus tickets online with RightBus." />
-        <link rel="icon" href="/favicon.ico" />
+        <title>RightBus — Online Bus Ticket Booking in India | Intercity Travel</title>
+        <meta name="description" content="RightBus is India's next-generation intercity bus booking platform. Search routes, compare fares, pick seats, and book bus tickets online." />
+        <link rel="icon" href="/logo.png" />
       </Head>
 
-      <div className={styles.pageContainer}>
-        {/* Navbar */}
-        <header className={styles.navbar}>
-          <div className={styles.navBrand}>
-            <span className={styles.logoBadge}>RB</span>
-            <span className={styles.logoText}>RightBus</span>
+      <div className={styles.pageWrapper}>
+        {/* Navigation Bar matching rightbus.in */}
+        <nav className={styles.navbar}>
+          <div className={styles.logoContainer}>
+            <Image
+              src="/logo.png"
+              alt="RightBus Logo"
+              width={160}
+              height={50}
+              priority
+              className={styles.logoImg}
+            />
           </div>
-          <span className={styles.navTagline}>Smart Intercity Booking</span>
-        </header>
+          <div className={styles.navRight}>
+            <div className={styles.navLinks}>
+              <span className={styles.navLink}>Features</span>
+              <span className={styles.navLink}>About</span>
+              <span className={styles.navLink}>Contact</span>
+            </div>
+            <button className={styles.joinBtn}>Search Routes</button>
+          </div>
+        </nav>
 
-        {/* Hero & Search Banner */}
+        {/* Hero Banner matching rightbus.in */}
         <section className={styles.heroSection}>
-          <h1 className={styles.heroTitle}>
-            Book Your Journey <span className={styles.heroGradient}>The Right Way</span>
-          </h1>
-          <p className={styles.heroSubtitle}>
-            Fast, transparent, and seamless intercity bus ticket booking across India.
-          </p>
+          <div className={styles.bgDecoration1}></div>
+          <div className={styles.bgDecoration2}></div>
 
-          <SearchForm
-            onSearch={handleSearchSubmit}
-            initialValues={searchParams}
-          />
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>
+              Book Your Journey <br />
+              <span className={styles.heroGradient}>The Right Way</span>
+            </h1>
+            <p className={styles.heroSubtitle}>
+              Reimagining intercity travel with a smarter, faster, and seamless bus booking experience.
+            </p>
+          </div>
+
+          <div className={styles.searchCardWrapper}>
+            <SearchForm
+              onSearch={handleSearchSubmit}
+              initialValues={searchParams}
+            />
+          </div>
         </section>
 
-        {/* Main Content Area handling UI States */}
+        {/* Main Content Area */}
         <main className={styles.mainContent}>
           {/* UI STATE 1: INITIAL */}
           {uiState === 'initial' && (
-            <div className={styles.stateContainer}>
-              <div className={styles.stateIcon}>🔍</div>
+            <div className={styles.stateCard}>
+              <div className={styles.stateIcon}>🚌</div>
               <h3>Search Intercity Buses</h3>
-              <p>Select your source city, destination, and journey date above to find available buses.</p>
+              <p>Enter your origin, destination, and travel date above to view real-time available buses.</p>
             </div>
           )}
 
           {/* UI STATE 2: LOADING */}
           {uiState === 'loading' && (
-            <div className={styles.stateContainer}>
+            <div className={styles.stateCard}>
               <div className={styles.spinner}></div>
               <h3>Finding the right choices for you...</h3>
               <p>Searching live bus routes, seat availability, and best prices for your trip.</p>
@@ -131,12 +153,12 @@ export default function Home() {
 
           {/* UI STATE 3: API ERROR */}
           {uiState === 'error' && (
-            <div className={`${styles.stateContainer} ${styles.errorContainer}`}>
+            <div className={`${styles.stateCard} ${styles.errorCard}`}>
               <div className={styles.stateIcon}>⚠️</div>
               <h3>Unable to load bus results</h3>
               <p className={styles.errorText}>
                 {errorMessage.includes('Failed to connect')
-                  ? 'Unable to connect to search service. Please make sure the backend is running and try again.'
+                  ? 'Unable to connect to bus search service. Please ensure backend server (Port 8000) is running.'
                   : errorMessage}
               </p>
               <button
@@ -156,8 +178,8 @@ export default function Home() {
                 onFilterChange={handleFilterChange}
                 totalResults={0}
               />
-              <div className={styles.stateContainer}>
-                <div className={styles.stateIcon}>🚌</div>
+              <div className={styles.stateCard}>
+                <div className={styles.stateIcon}>🔍</div>
                 <h3>No buses found for this route</h3>
                 <p>
                   No available buses matched your criteria for{' '}
@@ -178,7 +200,7 @@ export default function Home() {
                 totalResults={trips.length}
               />
 
-              <div className={styles.resultsList}>
+              <div className={styles.resultsGrid}>
                 {trips.map((bus) => (
                   <BusCard
                     key={bus.trip_id}
@@ -199,9 +221,16 @@ export default function Home() {
           />
         )}
 
-        {/* Footer */}
+        {/* Footer matching rightbus.in */}
         <footer className={styles.footer}>
-          © 2026 RightBus Technologies Private Limited. All rights reserved.
+          <div className={styles.footerBrand}>
+            <h3>RightBus</h3>
+            <p>Making bus travel simple, convenient, and reliable for millions of Indians.</p>
+          </div>
+          <div className={styles.footerBottom}>
+            © 2026 RightBus Technologies Private Limited. All rights reserved. <br />
+            <span>CIN: U74909KA2026PTC218775</span>
+          </div>
         </footer>
       </div>
     </>

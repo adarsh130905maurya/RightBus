@@ -1,17 +1,17 @@
 .card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 22px 26px;
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 24px 28px;
   margin-bottom: 18px;
-  box-shadow: 0 4px 16px rgba(26, 43, 76, 0.06);
-  border: 1px solid #E2E8F0;
-  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(26, 43, 76, 0.12);
-  border-color: #CBD5E1;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
 }
 
 .header {
@@ -22,9 +22,9 @@
 }
 
 .operatorName {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1A2B4C;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--primary);
   margin-bottom: 4px;
 }
 
@@ -35,11 +35,11 @@
 }
 
 .badgeAc {
-  background-color: #E0F2FE;
-  color: #0369A1;
+  background-color: rgba(0, 229, 255, 0.15);
+  color: var(--accent-dark);
   font-size: 11px;
   font-weight: 800;
-  padding: 3px 8px;
+  padding: 3px 10px;
   border-radius: 6px;
 }
 
@@ -48,13 +48,13 @@
   color: #B45309;
   font-size: 11px;
   font-weight: 800;
-  padding: 3px 8px;
+  padding: 3px 10px;
   border-radius: 6px;
 }
 
 .busTypeName {
   font-size: 13px;
-  color: #5E6B84;
+  color: var(--text-muted);
   font-weight: 600;
 }
 
@@ -65,18 +65,18 @@
 .currency {
   font-size: 20px;
   font-weight: 800;
-  color: #00bdd1;
+  color: var(--accent-dark);
 }
 
 .totalFare {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 800;
-  color: #1A2B4C;
+  color: var(--primary);
 }
 
 .seatsInfo {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   color: #EF4444;
 }
 
@@ -85,8 +85,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px 0;
-  border-top: 1px solid #F1F5F9;
-  border-bottom: 1px solid #F1F5F9;
+  border-top: 1px solid var(--surface-soft);
+  border-bottom: 1px solid var(--surface-soft);
 }
 
 .timeBlock {
@@ -95,20 +95,20 @@
 }
 
 .time {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
-  color: #1A2B4C;
+  color: var(--primary);
 }
 
 .cityName {
   font-size: 14px;
-  font-weight: 600;
-  color: #5E6B84;
+  font-weight: 700;
+  color: var(--text-muted);
 }
 
 .dateSub {
   font-size: 11px;
-  color: #94A3B8;
+  color: var(--text-faint);
 }
 
 .durationLine {
@@ -120,8 +120,8 @@
 
 .durationText {
   font-size: 13px;
-  font-weight: 700;
-  color: #00bdd1;
+  font-weight: 800;
+  color: var(--accent-dark);
   margin-bottom: 4px;
 }
 
@@ -135,13 +135,13 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #1A2B4C;
+  background-color: var(--primary);
 }
 
 .dashLine {
   flex: 1;
   height: 2px;
-  background-color: #CBD5E1;
+  background-color: var(--border);
 }
 
 .footer {
@@ -161,32 +161,35 @@
 }
 
 .amenityTag {
-  background-color: #F1F5F9;
-  color: #475569;
+  background-color: var(--surface-soft);
+  color: var(--text-muted);
   font-size: 12px;
-  font-weight: 600;
-  padding: 4px 10px;
+  font-weight: 700;
+  padding: 4px 12px;
   border-radius: 20px;
+  border: 1px solid var(--border);
 }
 
 .amenityMore {
   font-size: 12px;
-  color: #94A3B8;
+  color: var(--text-faint);
   font-weight: 600;
 }
 
 .detailsBtn {
-  background-color: #1A2B4C;
+  background: var(--gradient-brand);
   color: #FFFFFF;
   border: none;
-  padding: 9px 20px;
-  border-radius: 8px;
+  padding: 10px 22px;
+  border-radius: 10px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .detailsBtn:hover {
-  background-color: #00bdd1;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent);
 }
